@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="English VClass — Aula • Pronunciation: Speaking × Listening">
+<title>English VClass • Aula • Pronunciation — Speaking × Listening</title>
+<style>
+:root{
+  --primary:#123c69;
+  --secondary:#1f7a8c;
+  --accent:#f4b942;
+  --light:#f4f7fb;
+  --dark:#17202a;
+  --muted:#667085;
+  --green:#16803c;
+  --green-bg:#eaf7ee;
+  --red:#c62828;
+  --red-bg:#fdecec;
+  --white:#fff;
+  --shadow:0 8px 24px rgba(18,60,105,.10);
+  --radius:18px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--light);
+  color:var(--dark);
+  line-height:1.6;
+}
+header{
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  color:white;
+  padding:28px 16px 34px;
+}
+.header-inner{max-width:980px;margin:auto}
+.brand{font-weight:800;letter-spacing:.5px;font-size:1.05rem}
+header h1{font-size:clamp(1.8rem,5vw,3rem);line-height:1.15;margin:12px 0 8px}
+header p{margin:0;opacity:.95;font-size:1rem}
+.progress-wrap{margin-top:22px;background:rgba(255,255,255,.2);border-radius:99px;height:10px;overflow:hidden}
+.progress{width:10%;height:100%;background:var(--accent);border-radius:99px;transition:width .5s ease}
+nav{
+  position:sticky;top:0;z-index:20;
+  background:white;border-bottom:1px solid #e5e7eb;
+  overflow-x:auto;white-space:nowrap;
+}
+nav .nav-inner{max-width:980px;margin:auto;display:flex}
+nav a{
+  display:inline-block;padding:12px 14px;color:var(--primary);
+  text-decoration:none;font-weight:700;font-size:.9rem;
+}
+nav a.done::after{content:" ✓";color:var(--green);font-weight:800}
+main{max-width:980px;margin:auto;padding:20px 14px 50px}
+.card{
+  background:white;border-radius:var(--radius);padding:22px;
+  margin:18px 0;box-shadow:var(--shadow);
+}
+.card h2{color:var(--primary);margin-top:0;font-size:1.45rem}
+.card h3{color:var(--secondary);margin-bottom:8px}
+.badge{
+  display:inline-block;background:#e8f2fb;color:var(--primary);
+  padding:5px 10px;border-radius:999px;font-size:.8rem;font-weight:800;
+}
+.goal-list{padding-left:20px}
+.goal-list li{margin:7px 0}
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:420px}
+th,td{padding:12px;border-bottom:1px solid #e8ebef;text-align:left}
+th{background:#eef4fa;color:var(--primary)}
+.example{
+  background:#f8fafc;border-left:5px solid var(--secondary);
+  padding:13px 15px;margin:12px 0;border-radius:8px;
+}
+.example-audio{
+  display:flex;gap:6px;margin-top:8px;flex-wrap:wrap;
+}
+.audio-btn{
+  background:#eaf0f6;border:1px solid #d0d9e6;
+  border-radius:30px;padding:4px 12px;font-size:.75rem;
+  font-weight:700;color:var(--primary);cursor:pointer;
+  display:inline-flex;align-items:center;gap:4px;transition:.15s;
+}
+.audio-btn:hover{background:#d0d9e6}
+.audio-btn.playing{background:var(--secondary);color:white;border-color:var(--secondary)}
+.en{font-weight:700;color:var(--primary)}
+.pt{color:var(--muted)}
+.tip{
+  background:#fff8e7;border-left:5px solid var(--accent);
+  padding:14px;border-radius:8px;margin-top:14px;
+}
+.exercise{
+  border:1px solid #e3e8ef;border-radius:14px;padding:16px;margin:14px 0;
+}
+input[type="text"],textarea,select{
+  width:100%;padding:12px;border:1px solid #ccd5df;border-radius:10px;
+  font:inherit;background:white;
+}
+textarea{min-height:110px;resize:vertical}
+button{
+  border:0;border-radius:12px;padding:12px 17px;
+  background:var(--primary);color:white;font-weight:800;
+  cursor:pointer;font-size:1rem;
+}
+button:hover{filter:brightness(1.08)}
+button.secondary{background:var(--secondary)}
+button.light{background:#eaf0f6;color:var(--primary)}
+.feedback{
+  margin-top:10px;padding:11px;border-radius:10px;font-weight:700;display:none;
+}
+.feedback.correct{display:block;background:var(--green-bg);color:var(--green)}
+.feedback.wrong{display:block;background:var(--red-bg);color:var(--red)}
+.option{
+  display:block;width:100%;text-align:left;margin:8px 0;
+  background:#f5f7fa;color:var(--dark);border:1px solid #dce2e9;
+}
+.option.correct{background:var(--green-bg);border-color:#9ed7ae;color:var(--green)}
+.option.wrong{background:var(--red-bg);border-color:#efaaaa;color:var(--red)}
+.option:disabled{cursor:default;opacity:1}
+.score{
+  text-align:center;background:#eef4fa;border-radius:16px;padding:20px;
+  margin-top:20px;
+}
+.score strong{font-size:2.2rem;color:var(--primary)}
+.audio-box{
+  text-align:center;background:#f5f8fb;border-radius:15px;padding:20px;
+}
+#transcript{display:none;margin-top:15px}
+.speaking-card{
+  background:linear-gradient(135deg,#f5f8fb,#ffffff);
+  border:1px solid #e0e7ef;
+}
+footer{
+  text-align:center;margin-top:30px;padding:28px 15px;
+  color:#777;background:white;border-top:1px solid #e5e7eb;
+}
+footer .copyright{font-weight:700}
+.small{font-size:.88rem;color:var(--muted)}
+.hidden{display:none}
+@media(max-width:600px){
+  header{padding-top:23px}
+  .card{padding:18px;margin:14px 0}
+  nav a{padding:11px 12px;font-size:.82rem}
+  button{width:100%;margin-top:5px}
+  .audio-btn{width:auto;margin-top:0}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">English VClass • Edson D'Aguiar</div>
+    <h1>Aula — Pronunciation: Speaking × Listening</h1>
+    <p>Accents · Word Stress · Sentence Stress · Rhythm · Velocity · Áudio US/UK/AU/CA</p>
+    <div class="progress-wrap" aria-label="Progresso da aula"><div class="progress" id="globalProgress"></div></div>
+    <p class="small" style="color:white;margin-top:8px"><span id="progressLabel">0</span>% concluído • Curso English Foundations • Módulo Pronunciation</p>
+  </div>
+</header>
+
+<nav aria-label="Navegação da aula">
+  <div class="nav-inner">
+    <a href="#objetivos" data-section="objetivos">Objetivos</a>
+    <a href="#accents" data-section="accents">Accents</a>
+    <a href="#stress" data-section="stress">Stress & Rhythm</a>
+    <a href="#velocity" data-section="velocity">Velocity</a>
+    <a href="#vocab" data-section="vocab">Vocabulary</a>
+    <a href="#exercises" data-section="exercises">Exercises</a>
+    <a href="#listening" data-section="listening">Listening</a>
+    <a href="#speaking" data-section="speaking">Speaking</a>
+    <a href="#quiz" data-section="quiz">Quiz</a>
+  </div>
+</nav>
+
+<main>
+
+<section class="card" id="objetivos">
+  <span class="badge">B1–C1 • INTERMEDIATE–ADVANCED</span>
+  <h2>🎯 Objetivos da aula</h2>
+  <p>Ao terminar esta aula, você deverá ser capaz de:</p>
+  <ul class="goal-list">
+    <li>Reconhecer e distinguir os principais <strong>acentos do inglês</strong>: britânico (RP, Cockney, Estuary, Scouse, Geordie, Scottish), americano, australiano e canadense.</li>
+    <li>Identificar características fonéticas-chave: <strong>non-rhoticity, rhoticity, flap T, crisp T, long A, rounded O</strong>.</li>
+    <li>Aplicar <strong>word stress</strong> (tônica da palavra) e <strong>sentence stress</strong> (tônica da frase).</li>
+    <li>Compreender o <strong>ritmo do inglês</strong> (stress-timed language).</li>
+    <li>Ajustar sua <strong>velocidade (velocity)</strong> de fala conforme o contexto.</li>
+    <li>Usar <strong>topic statements</strong> formais, informais e internacionais com pronúncia clara.</li>
+    <li>Melhorar a compreensão auditiva (listening) a partir da consciência fonológica.</li>
+  </ul>
+</section>
+
+<section class="card" id="accents">
+  <h2>📘 1. Accents — British, American, Australian, Canadian</h2>
+  <p>Cada variedade do inglês tem características fonéticas próprias. Estudar essas diferenças melhora radicalmente sua capacidade de <strong>listening</strong> e sua naturalidade ao <strong>speaking</strong>.</p>
+
+  <h3>🇬🇧 British English — Key Features</h3>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Feature</th><th>Description</th><th>Example</th><th>Áudio</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Non-Rhoticity</strong></td>
+          <td>"R" is silent after a vowel or at the end of a word.</td>
+          <td>car → "cah" · teacher → "teach-uh" · father → "fath-uh"</td>
+          <td><div class="example-audio">
+            <button class="audio-btn" data-phrase="car, teacher, father, water, butter, mother, sister, brother" data-accent="uk">🇬🇧 UK</button>
+            <button class="audio-btn" data-phrase="car, teacher, father, water, butter, mother, sister, brother" data-accent="us">🇺🇸 US</button>
+          </div></td>
+        </tr>
+        <tr>
+          <td><strong>Rounded "O"</strong></td>
+          <td>"O" is shorter and more rounded than in American English.</td>
+          <td>hot · not · lot · stop · clock · dog · shop · rock</td>
+          <td><div class="example-audio">
+            <button class="audio-btn" data-phrase="hot, not, lot, stop, clock, dog, shop, rock" data-accent="uk">🇬🇧 UK</button>
+            <button class="audio-btn" data-phrase="hot, not, lot, stop, clock, dog, shop, rock" data-accent="us">🇺🇸 US</button>
+          </div></td>
+        </tr>
+        <tr>
+          <td><strong>Long "A"</strong></td>
+          <td>"A" is drawn out and deeper (like "ar") in some words.</td>
+          <td>bath → "barth" · dance → "dahnce" · glass → "glahss" · path · grass · fast · last · class</td>
+          <td><div class="example-audio">
+            <button class="audio-btn" data-phrase="bath, dance, glass, path, grass, fast, last, class" data-accent="uk">🇬🇧 UK</button>
+            <button class="audio-btn" data-phrase="bath, dance, glass, path, grass, fast, last, class" data-accent="us">🇺🇸 US</button>
+          </div></td>
+        </tr>
+        <tr>
+          <td><strong>Crisp "T"</strong></td>
+          <td>"T" is pronounced clearly and sharply (unlike the American flap T).</td>
+          <td>water · better · city · letter · butter · matter · bitter · little</td>
+          <td><div class="example-audio">
+            <button class="audio-btn" data-phrase="water, better, city, letter, butter, matter, bitter, little" data-accent="uk">🇬🇧 UK</button>
+            <button class="audio-btn" data-phrase="water, better, city, letter, butter, matter, bitter, little" data-accent="us">🇺🇸 US</button>
+          </div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 style="margin-top:24px">🎩 Regional British Accents</h3>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Accent</th><th>Region</th><th>Key Features</th><th>Example</th><th>Áudio</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>RP</strong> (Received Pronunciation)</td>
+          <td>Region-less standard</td>
+          <td>Non-rhotic · Long A · Rounded O · Clear consonants. Used by the Royal Family and BBC.</td>
+          <td>I speak Received Pronunciation.</td>
+          <td><div class="example-audio">
+            <button class="audio-btn" data-phrase="I speak Received Pronunciation. The Queen's English is a standard. BBC newsreaders use RP. RP is considered the prestige accent." data-accent="uk">🇬🇧 UK</button>
+          </div></td>
+        </tr>
+        <tr>
+          <td><strong>Cockney</strong></td>
+          <td>East London</td>
+          <td>Th-fronting (think → fink) · H-dropping (house → ouse) · Glottal stop (bottle → bo'le) · Rhyming slang.</td>
+          <td>I fink it's a good idea. / Let's go up the apples.</td>
+          <td><div class="example-audio">
+            <button class="audio-btn" data-phrase="I fink it's a good idea. I'm going to the ouse. Get a bottle of water. Let's go up the apples." data-accent="uk">🇬🇧 UK</button>
+          </div></td>
+        </tr>
+        <tr>
+          <td><strong>Estuary English</strong></td>
+          <td>London & Thames Estuary</td>
+          <td>Blend of Cockney & RP · T-glottalization · L-vocalization. Modern, popular among young professionals.</td>
+          <td>The bottle is on the table.</td>
+          <td><div class="example-audio">
+            <button class="audio-btn" data-phrase="I'm going to the station. It's a really good film. The bottle is on the table. I need to get some milk." data-accent="uk">🇬🇧 UK</button>
+          </div></td>
+        </tr>
+        <tr>
+          <td><strong>Scouse</strong></td>
+          <td>Liverpool</td>
+          <td>Distinct rising/falling melody · Th-fronting · Nasal twang · Unique vowels ("look" → "Luke").</td>
+          <td>I'm from Liverpool, me.</td>
+          <td><div class="example-audio">
+            <button class="audio-btn" data-phrase="I'm from Liverpool, me. It's boss, that! Let's go to the pub. I love this city. It's really nice today." data-accent="uk">🇬🇧 UK</button>
+          </div></td>
+        </tr>
+        <tr>
+          <td><strong>Geordie</strong></td>
+          <td>Newcastle upon Tyne</td>
+          <td>Distinct vowels · Glottal stops · Unique vocabulary · "Howay" = come on.</td>
+          <td>Howay, man! It's canny good.</td>
+          <td><div class="example-audio">
+            <button class="audio-btn" data-phrase="Howay, man! I'm ganning to the toon. It's canny good. I'm feeling canny tired. Let's gan to the pub." data-accent="uk">🇬🇧 UK</button>
+          </div></td>
+        </tr>
+        <tr>
+          <td><strong>Scottish English</strong></td>
+          <td>Scotland</td>
+          <td>Rhotic R · Distinct vowels · Scots vocabulary: aye (yes), braw (excellent), ken (know), wee (small).</td>
+          <td>Aye, it's braw!</td>
+          <td><div class="example-audio">
+            <button class="audio-btn" data-phrase="Aye, it's braw! I dinnae ken. It's a wee bit cold. What's the craic? She's a bonnie lass. Let's have a wee dram." data-accent="uk">🇬🇧 UK</button>
+          </div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 style="margin-top:24px">🇺🇸 American English — Key Features</h3>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Feature</th><th>Description</th><th>Example</th><th>Áudio</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Rhotic R</strong></td>
+          <td>"R" is always pronounced, even after vowels or at the end of words.</td>
+          <td>car → "carr" · teacher → "teacher-r" · father · water · butter · mother</td>
+          <td><div class="example-audio">
+            <button class="audio-btn" data-phrase="car, teacher, father, water, butter, mother" data-accent="us">🇺🇸 US</button>
+            <button class="audio-btn" data-phrase="car, teacher, father, water, butter, mother" data-accent="uk">🇬🇧 UK</button>
+          </div></td>
+        </tr>
+        <tr>
+          <td><strong>Flap T</strong></td>
+          <td>"T" between vowels sounds like a quick "D".</td>
+          <td>water → "wadder" · better → "bedder" · city → "cidy" · letter · butter · matter</td>
+          <td><div class="example-audio">
+            <button class="audio-btn" data-phrase="water, better, city, letter, butter, matter" data-accent="us">🇺🇸 US</button>
+            <button class="audio-btn" data-phrase="water, better, city, letter, butter, matter" data-accent="uk">🇬🇧 UK</button>
+          </div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 style="margin-top:24px">🇦🇺 Australian & 🇨🇦 Canadian Accents</h3>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Accent</th><th>Key Features</th><th>Example</th><th>Áudio</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Australian</strong></td>
+          <td>Non-rhotic · High rising terminal (uptalk) · Diphthong shifts ("day" → "die") · Short, clipped vowels.</td>
+          <td>G'day, mate! How's it going? · I'm from Sydney.</td>
+          <td><div class="example-audio">
+            <button class="audio-btn" data-phrase="G'day, mate! How's it going? I'm from Sydney. It's a beautiful day." data-accent="us">🇦🇺 AU</button>
+          </div></td>
+        </tr>
+        <tr>
+          <td><strong>Canadian</strong></td>
+          <td>Rhotic · "Canadian raising" (about → "aboot") · "Eh" as a tag · Close to American but with distinct vowels.</td>
+          <td>It's cold out, eh? · I'm from Toronto.</td>
+          <td><div class="example-audio">
+            <button class="audio-btn" data-phrase="It's cold out, eh? I'm from Toronto. Let's grab a coffee." data-accent="us">🇨🇦 CA</button>
+          </div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 style="margin-top:24px">📊 British vs American — Comparison</h3>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Feature</th><th>🇬🇧 British</th><th>🇺🇸 American</th></tr></thead>
+      <tbody>
+        <tr><td>R after vowel</td><td>Non-rhotic — car = "cah"</td><td>Rhotic — car = "carr"</td></tr>
+        <tr><td>T between vowels</td><td>Crisp T — water = "wa-tuh"</td><td>Flap T — water = "wadder"</td></tr>
+        <tr><td>A in "bath"</td><td>Long A — "barth"</td><td>Flat A — "bath"</td></tr>
+        <tr><td>O in "hot"</td><td>Rounded O</td><td>Open O</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tip">
+    <strong>💡 Why it matters:</strong> Entender essas diferenças é essencial para os exames <strong>Cambridge, IELTS e TOEFL</strong>, e para a comunicação com equipes internacionais. Em contextos profissionais globais, você precisará compreender múltiplos sotaques.
+  </div>
+</section>
+
+<section class="card" id="stress">
+  <h2>📘 2. Word Stress × Sentence Stress & Rhythm</h2>
+  <p>O inglês é uma <strong>stress-timed language</strong> — as sílabas tônicas marcam o ritmo, enquanto as não-tônicas são reduzidas. Dominar esse padrão é o segredo da fluência e da compreensão.</p>
+
+  <h3>🔵 Word Stress — A Tônica da Palavra</h3>
+  <p>Cada palavra em inglês tem uma sílaba forte. Errar a tônica pode mudar o significado ou tornar a fala incompreensível.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Word</th><th>Stress Pattern</th><th>IPA</th><th>Áudio</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>PREsent (noun)</td>
+          <td><strong>PRE</strong>-sent</td>
+          <td>/ˈprez.ənt/</td>
+          <td><div class="example-audio">
+            <button class="audio-btn" data-phrase="PREsent" data-accent="us">🇺🇸 US</button>
+            <button class="audio-btn" data-phrase="PREsent" data-accent="uk">🇬🇧 UK</button>
+          </div></td>
+        </tr>
+        <tr>
+          <td>preSENT (verb)</td>
+          <td>pre-<strong>SENT</strong></td>
+          <td>/prɪˈzent/</td>
+          <td><div class="example-audio">
+            <button class="audio-btn" data-phrase="preSENT" data-accent="us">🇺🇸 US</button>
+            <button class="audio-btn" data-phrase="preSENT" data-accent="uk">🇬🇧 UK</button>
+          </div></td>
+        </tr>
+        <tr>
+          <td>REcord (noun)</td>
+          <td><strong>RE</strong>-cord</td>
+          <td>/ˈrek.ɔːrd/</td>
+          <td><div class="example-audio">
+            <button class="audio-btn" data-phrase="REcord" data-accent="us">🇺🇸 US</button>
+            <button class="audio-btn" data-phrase="REcord" data-accent="uk">🇬🇧 UK</button>
+          </div></td>
+        </tr>
+        <tr>
+          <td>reCORD (verb)</td>
+          <td>re-<strong>CORD</strong></td>
+          <td>/rɪˈkɔːrd/</td>
+          <td><div class="example-audio">
+            <button class="audio-btn" data-phrase="reCORD" data-accent="us">🇺🇸 US</button>
+            <button class="audio-btn" data-phrase="reCORD" data-accent="uk">🇬🇧 UK</button>
+          </div></td>
+        </tr>
+        <tr>
+          <td>PHOtograph</td>
+          <td><strong>PHO</strong>-to-graph</td>
+          <td>/ˈfoʊ.tə.ɡræf/</td>
+          <td><div class="example-audio">
+            <button class="audio-btn" data-phrase="PHOtograph" data-accent="us">🇺🇸 US</button>
+            <button class="audio-btn" data-phrase="PHOtograph" data-accent="uk">🇬🇧 UK</button>
+          </div></td>
+        </tr>
+        <tr>
+          <td>phoTOgrapher</td>
+          <td>pho-<strong>TO</strong>-gra-pher</td>
+          <td>/fəˈtɒɡ.rə.fər/</td>
+          <td><div class="example-audio">
+            <button class="audio-btn" data-phrase="phoTOgrapher" data-accent="us">🇺🇸 US</button>
+            <button class="audio-btn" data-phrase="phoTOgrapher" data-accent="uk">🇬🇧 UK</button>
+          </div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 style="margin-top:24px">🟠 Sentence Stress — A Tônica da Frase</h3>
+  <p>Em inglês, apenas as <strong>palavras de conteúdo</strong> (substantivos, verbos, adjetivos, advérbios) são tônicas. As <strong>palavras funcionais</strong> (artigos, preposições, pronomes, auxiliares) são reduzidas.</p>
+
+  <div class="example">
+    <div class="en">I <strong>REALLY</strong> need to <strong>FINISH</strong> this <strong>PROJECT</strong> by <strong>FRIDAY</strong>.</div>
+    <div class="pt">Eu realmente preciso terminar este projeto até sexta.</div>
+    <div class="example-audio">
+      <button class="audio-btn" data-phrase="I REALLY need to FINISH this PROJECT by FRIDAY." data-accent="us">🇺🇸 US</button>
+      <button class="audio-btn" data-phrase="I REALLY need to FINISH this PROJECT by FRIDAY." data-accent="uk">🇬🇧 UK</button>
+    </div>
+  </div>
+
+  <div class="example">
+    <div class="en">She <strong>WORKS</strong> for a <strong>MULTINATIONAL</strong> company in <strong>SÃO PAULO</strong>.</div>
+    <div class="pt">Ela trabalha para uma empresa multinacional em São Paulo.</div>
+    <div class="example-audio">
+      <button class="audio-btn" data-phrase="She WORKS for a MULTINATIONAL company in SÃO PAULO." data-accent="us">🇺🇸 US</button>
+      <button class="audio-btn" data-phrase="She WORKS for a MULTINATIONAL company in SÃO PAULO." data-accent="uk">🇬🇧 UK</button>
+    </div>
+  </div>
+
+  <div class="tip">
+    <strong>💡 Contrastive stress:</strong> Mudar a tônica muda o significado.<br>
+    <em>I didn't say SHE stole it.</em> (alguém mais)<br>
+    <em>I didn't say she STOLE it.</em> (talvez emprestou)
+  </div>
+
+  <h3 style="margin-top:24px">🟢 Rhythm — O Ritmo do Inglês</h3>
+  <p>O inglês tem ritmo <strong>stress-timed</strong>: o tempo entre as sílabas tônicas é aproximadamente igual, independentemente do número de sílabas não-tônicas.</p>
+
+  <div class="example">
+    <div class="en">CATS <strong>EAT</strong> FISH<br>the CATS will <strong>EAT</strong> the FISH<br>the CATS will have <strong>EAT</strong>en the FISH</div>
+    <div class="pt">As palavras tônicas (CATS, EAT, FISH) mantêm o mesmo compasso em todas as frases.</div>
+    <div class="example-audio">
+      <button class="audio-btn" data-phrase="The CATS will EAT the FISH. The CATS will have EATen the FISH." data-accent="us">🇺🇸 US</button>
+      <button class="audio-btn" data-phrase="The CATS will EAT the FISH. The CATS will have EATen the FISH." data-accent="uk">🇬🇧 UK</button>
+    </div>
+  </div>
+
+  <h3 style="margin-top:24px">🟣 Topic Statements — Formal, Informal & International</h3>
+  <p>Pratique os padrões de stress com três registros: <strong>formal</strong> (apresentações, reuniões), <strong>informal</strong> (conversas do dia a dia) e <strong>internacional</strong> (contextos globais).</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Register</th><th>Topic Statement</th><th>Áudio</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Formal</strong></td>
+          <td>I would like to PROPOSE a STRATEGIC PARTNERSHIP that BENEFITS both ORGANIZATIONS.</td>
+          <td><div class="example-audio">
+            <button class="audio-btn" data-phrase="I would like to PROPOSE a STRATEGIC PARTNERSHIP that BENEFITS both ORGANIZATIONS." data-accent="us">🇺🇸 US</button>
+            <button class="audio-btn" data-phrase="I would like to PROPOSE a STRATEGIC PARTNERSHIP that BENEFITS both ORGANIZATIONS." data-accent="uk">🇬🇧 UK</button>
+          </div></td>
+        </tr>
+        <tr>
+          <td><strong>Informal</strong></td>
+          <td>Hey, I REALLY think we should GRAB a COFFEE and TALK about this.</td>
+          <td><div class="example-audio">
+            <button class="audio-btn" data-phrase="Hey, I REALLY think we should GRAB a COFFEE and TALK about this." data-accent="us">🇺🇸 US</button>
+            <button class="audio-btn" data-phrase="Hey, I REALLY think we should GRAB a COFFEE and TALK about this." data-accent="uk">🇬🇧 UK</button>
+          </div></td>
+        </tr>
+        <tr>
+          <td><strong>International</strong></td>
+          <td>Our GLOBAL TEAM will DELIVER the PROJECT on TIME and WITHIN BUDGET.</td>
+          <td><div class="example-audio">
+            <button class="audio-btn" data-phrase="Our GLOBAL TEAM will DELIVER the PROJECT on TIME and WITHIN BUDGET." data-accent="us">🇺🇸 US</button>
+            <button class="audio-btn" data-phrase="Our GLOBAL TEAM will DELIVER the PROJECT on TIME and WITHIN BUDGET." data-accent="uk">🇬🇧 UK</button>
+          </div></td>
+        </tr>
+        <tr>
+          <td><strong>Formal</strong></td>
+          <td>We APPRECIATE your CONTINUED SUPPORT and COMMITMENT to EXCELLENCE.</td>
+          <td><div class="example-audio">
+            <button class="audio-btn" data-phrase="We APPRECIATE your CONTINUED SUPPORT and COMMITMENT to EXCELLENCE." data-accent="us">🇺🇸 US</button>
+            <button class="audio-btn" data-phrase="We APPRECIATE your CONTINUED SUPPORT and COMMITMENT to EXCELLENCE." data-accent="uk">🇬🇧 UK</button>
+          </div></td>
+        </tr>
+        <tr>
+          <td><strong>Informal</strong></td>
+          <td>I'm TOTALLY EXHAUSTED — it's been a CRAZY week at WORK.</td>
+          <td><div class="example-audio">
+            <button class="audio-btn" data-phrase="I'm TOTALLY EXHAUSTED, it's been a CRAZY week at WORK." data-accent="us">🇺🇸 US</button>
+            <button class="audio-btn" data-phrase="I'm TOTALLY EXHAUSTED, it's been a CRAZY week at WORK." data-accent="uk">🇬🇧 UK</button>
+          </div></td>
+        </tr>
+        <tr>
+          <td><strong>International</strong></td>
+          <td>We NEED to ALIGN our OBJECTIVES with the REGIONAL TEAMS before the LAUNCH.</td>
+          <td><div class="example-audio">
+            <button class="audio-btn" data-phrase="We NEED to ALIGN our OBJECTIVES with the REGIONAL TEAMS before the LAUNCH." data-accent="us">🇺🇸 US</button>
+            <button class="audio-btn" data-phrase="We NEED to ALIGN our OBJECTIVES with the REGIONAL TEAMS before the LAUNCH." data-accent="uk">🇬🇧 UK</button>
+          </div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card" id="velocity">
+  <h2>📘 3. Velocity of the Speaker — Speed & Comprehension</h2>
+  <p>A <strong>velocidade de fala</strong> (speaker velocity) afeta diretamente a compreensão auditiva. Falantes nativos variam entre 120 e 200 palavras por minuto (wpm), dependendo do contexto, emoção e sotaque.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Speed</th><th>WPM</th><th>Typical Context</th><th>Tip for Listening</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Slow</strong></td>
+          <td>80–110</td>
+          <td>Aulas, apresentações formais, anúncios</td>
+          <td>Fácil de processar — foque em vocabulário novo.</td>
+        </tr>
+        <tr>
+          <td><strong>Moderate</strong></td>
+          <td>110–140</td>
+          <td>Noticiários, podcasts educativos, reuniões</td>
+          <td>Padrão de escuta profissional — ideal para treino.</td>
+        </tr>
+        <tr>
+          <td><strong>Fast</strong></td>
+          <td>140–170</td>
+          <td>Conversas naturais, talk shows, séries</td>
+          <td>Espere reduções: "going to" → "gonna", "want to" → "wanna".</td>
+        </tr>
+        <tr>
+          <td><strong>Very Fast</strong></td>
+          <td>170–200+</td>
+          <td>Debates acalorados, comédia, rap, esportes</td>
+          <td>Ouça apenas as palavras tônicas — elas carregam o significado.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 style="margin-top:24px">🔊 Common Reductions at High Speed</h3>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Full Form</th><th>Reduced</th><th>Example</th><th>Áudio</th></tr></thead>
+      <tbody>
+        <tr><td>going to</td><td>gonna</td><td>I'm gonna call you later.</td><td><div class="example-audio"><button class="audio-btn" data-phrase="I'm gonna call you later." data-accent="us">🇺🇸 US</button><button class="audio-btn" data-phrase="I'm gonna call you later." data-accent="uk">🇬🇧 UK</button></div></td></tr>
+        <tr><td>want to</td><td>wanna</td><td>Do you wanna grab lunch?</td><td><div class="example-audio"><button class="audio-btn" data-phrase="Do you wanna grab lunch?" data-accent="us">🇺🇸 US</button><button class="audio-btn" data-phrase="Do you wanna grab lunch?" data-accent="uk">🇬🇧 UK</button></div></td></tr>
+        <tr><td>got to</td><td>gotta</td><td>I gotta go now.</td><td><div class="example-audio"><button class="audio-btn" data-phrase="I gotta go now." data-accent="us">🇺🇸 US</button><button class="audio-btn" data-phrase="I gotta go now." data-accent="uk">🇬🇧 UK</button></div></td></tr>
+        <tr><td>kind of</td><td>kinda</td><td>It's kinda cold today.</td><td><div class="example-audio"><button class="audio-btn" data-phrase="It's kinda cold today." data-accent="us">🇺🇸 US</button><button class="audio-btn" data-phrase="It's kinda cold today." data-accent="uk">🇬🇧 UK</button></div></td></tr>
+        <tr><td>let me</td><td>lemme</td><td>Lemme check that for you.</td><td><div class="example-audio"><button class="audio-btn" data-phrase="Lemme check that for you." data-accent="us">🇺🇸 US</button><button class="audio-btn" data-phrase="Lemme check that for you." data-accent="uk">🇬🇧 UK</button></div></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tip">
+    <strong>💡 Listening strategy:</strong> Não tente entender <em>todas</em> as palavras. Foque nas <strong>palavras tônicas</strong> — elas carregam 80% do significado. O resto é preenchimento.
+  </div>
+</section>
+
+<section class="card" id="vocab">
+  <h2>🧠 4. Vocabulary — Pronunciation & Listening</h2>
+  <p>Termos técnicos e cotidianos para falar sobre pronúncia, sotaques e ritmo.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>English</th><th>Português</th><th>Áudio</th></tr></thead>
+      <tbody>
+        <tr><td>accent</td><td>sotaque</td><td><div class="example-audio"><button class="audio-btn" data-phrase="accent" data-accent="us">🇺🇸 US</button><button class="audio-btn" data-phrase="accent" data-accent="uk">🇬🇧 UK</button></div></td></tr>
+        <tr><td>dialect</td><td>dialeto</td><td><div class="example-audio"><button class="audio-btn" data-phrase="dialect" data-accent="us">🇺🇸 US</button><button class="audio-btn" data-phrase="dialect" data-accent="uk">🇬🇧 UK</button></div></td></tr>
+        <tr><td>pronunciation</td><td>pronúncia</td><td><div class="example-audio"><button class="audio-btn" data-phrase="pronunciation" data-accent="us">🇺🇸 US</button><button class="audio-btn" data-phrase="pronunciation" data-accent="uk">🇬🇧 UK</button></div></td></tr>
+        <tr><td>intonation</td><td>entonação</td><td><div class="example-audio"><button class="audio-btn" data-phrase="intonation" data-accent="us">🇺🇸 US</button><button class="audio-btn" data-phrase="intonation" data-accent="uk">🇬🇧 UK</button></div></td></tr>
+        <tr><td>rhythm</td><td>ritmo</td><td><div class="example-audio"><button class="audio-btn" data-phrase="rhythm" data-accent="us">🇺🇸 US</button><button class="audio-btn" data-phrase="rhythm" data-accent="uk">🇬🇧 UK</button></div></td></tr>
+        <tr><td>word stress</td><td>tônica da palavra</td><td><div class="example-audio"><button class="audio-btn" data-phrase="word stress" data-accent="us">🇺🇸 US</button><button class="audio-btn" data-phrase="word stress" data-accent="uk">🇬🇧 UK</button></div></td></tr>
+        <tr><td>sentence stress</td><td>tônica da frase</td><td><div class="example-audio"><button class="audio-btn" data-phrase="sentence stress" data-accent="us">🇺🇸 US</button><button class="audio-btn" data-phrase="sentence stress" data-accent="uk">🇬🇧 UK</button></div></td></tr>
+        <tr><td>reduction</td><td>redução</td><td><div class="example-audio"><button class="audio-btn" data-phrase="reduction" data-accent="us">🇺🇸 US</button><button class="audio-btn" data-phrase="reduction" data-accent="uk">🇬🇧 UK</button></div></td></tr>
+        <tr><td>liaison</td><td>ligação entre palavras</td><td><div class="example-audio"><button class="audio-btn" data-phrase="liaison" data-accent="us">🇺🇸 US</button><button class="audio-btn" data-phrase="liaison" data-accent="uk">🇬🇧 UK</button></div></td></tr>
+        <tr><td>schwa</td><td>som neutro /ə/</td><td><div class="example-audio"><button class="audio-btn" data-phrase="schwa" data-accent="us">🇺🇸 US</button><button class="audio-btn" data-phrase="schwa" data-accent="uk">🇬🇧 UK</button></div></td></tr>
+        <tr><td>glottal stop</td><td>oclusiva glotal</td><td><div class="example-audio"><button class="audio-btn" data-phrase="glottal stop" data-accent="us">🇺🇸 US</button><button class="audio-btn" data-phrase="glottal stop" data-accent="uk">🇬🇧 UK</button></div></td></tr>
+        <tr><td>rhotic / non-rhotic</td><td>com/sem som de R final</td><td><div class="example-audio"><button class="audio-btn" data-phrase="rhotic, non-rhotic" data-accent="us">🇺🇸 US</button><button class="audio-btn" data-phrase="rhotic, non-rhotic" data-accent="uk">🇬🇧 UK</button></div></td></tr>
+        <tr><td>flap T</td><td>T como D (americano)</td><td><div class="example-audio"><button class="audio-btn" data-phrase="flap T" data-accent="us">🇺🇸 US</button><button class="audio-btn" data-phrase="flap T" data-accent="uk">🇬🇧 UK</button></div></td></tr>
+        <tr><td>crisp T</td><td>T nítido (britânico)</td><td><div class="example-audio"><button class="audio-btn" data-phrase="crisp T" data-accent="us">🇺🇸 US</button><button class="audio-btn" data-phrase="crisp T" data-accent="uk">🇬🇧 UK</button></div></td></tr>
+        <tr><td>uptalk</td><td>entonação ascendente</td><td><div class="example-audio"><button class="audio-btn" data-phrase="uptalk" data-accent="us">🇺🇸 US</button><button class="audio-btn" data-phrase="uptalk" data-accent="uk">🇬🇧 UK</button></div></td></tr>
+        <tr><td>velocity / speech rate</td><td>velocidade da fala</td><td><div class="example-audio"><button class="audio-btn" data-phrase="velocity, speech rate" data-accent="us">🇺🇸 US</button><button class="audio-btn" data-phrase="velocity, speech rate" data-accent="uk">🇬🇧 UK</button></div></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card" id="exercises">
+  <h2>✏️ 5. Exercises</h2>
+
+  <div class="exercise">
+    <h3>Exercise 1 — Identify the Feature</h3>
+    <p>"Car" pronounced as "cah" → Which feature of British English is this?</p>
+    <select id="ex1">
+      <option value="">Choose an answer</option>
+      <option>Flap T</option>
+      <option>Non-Rhotic R</option>
+      <option>Long A</option>
+    </select>
+    <button class="secondary" onclick="checkEx1()">Check answer</button>
+    <div id="ex1fb" class="feedback"></div>
+  </div>
+
+  <div class="exercise">
+    <h3>Exercise 2 — Identify the American Feature</h3>
+    <p>"Water" pronounced as "wadder" → Which American feature is this?</p>
+    <select id="ex2">
+      <option value="">Choose an answer</option>
+      <option>Rhotic R</option>
+      <option>Flap T</option>
+      <option>Open O</option>
+    </select>
+    <button class="secondary" onclick="checkEx2()">Check answer</button>
+    <div id="ex2fb" class="feedback"></div>
+  </div>
+
+  <div class="exercise">
+    <h3>Exercise 3 — Identify the British Accent</h3>
+    <p>"I fink it's a good idea." — Which British accent is this?</p>
+    <select id="ex3">
+      <option value="">Choose an answer</option>
+      <option>Cockney</option>
+      <option>Geordie</option>
+      <option>Scottish</option>
+    </select>
+    <button class="secondary" onclick="checkEx3()">Check answer</button>
+    <div id="ex3fb" class="feedback"></div>
+  </div>
+
+  <div class="exercise">
+    <h3>Exercise 4 — Word Stress</h3>
+    <p>Which syllable is stressed in "PHOtograph"?</p>
+    <select id="ex4">
+      <option value="">Choose an answer</option>
+      <option>First syllable (PHO-)</option>
+      <option>Second syllable (-TO-)</option>
+      <option>Third syllable (-GRAPH)</option>
+    </select>
+    <button class="secondary" onclick="checkEx4()">Check answer</button>
+    <div id="ex4fb" class="feedback"></div>
+  </div>
+
+  <div class="exercise">
+    <h3>Exercise 5 — Put the words in order (Topic Statement)</h3>
+    <p><strong>team / our / will / global / deliver / project / the</strong></p>
+    <input id="ex5" type="text" placeholder="Type the complete sentence">
+    <button class="secondary" onclick="checkEx5()">Check answer</button>
+    <div id="ex5fb" class="feedback"></div>
+  </div>
+
+  <div class="exercise">
+    <h3>Exercise 6 — Translate into English</h3>
+    <p>"Estou realmente exausto — foi uma semana louca no trabalho."</p>
+    <input id="ex6" type="text" placeholder="Type the English sentence">
+    <button class="secondary" onclick="checkEx6()">Check answer</button>
+    <div id="ex6fb" class="feedback"></div>
+  </div>
+</section>
+
+<section class="card" id="listening">
+  <h2>🎧 6. Listening Practice — Multi-Accent Interview</h2>
+  <p>Ouça um trecho de uma reunião internacional com falantes de quatro sotaques diferentes. Depois responda às perguntas.</p>
+
+  <div class="audio-box">
+    <button onclick="speakListening()">🔊 Play Listening</button>
+    <button class="light" onclick="toggleTranscript()">📄 Show / Hide Transcript</button>
+    <div id="transcript" class="example">
+      <div class="en">
+        Sarah (British, RP): Good morning, everyone. Thank you for joining this global call. We need to align our objectives before the launch.
+        Mike (American): Sure, Sarah. I wanna make sure we all agree on the timeline. The team is gonna deliver the first milestone by Friday.
+        Liam (Australian): G'day, everyone. From my side, the regional office is ready. We've got the resources, and we're good to go.
+        Emma (Canadian): That's great to hear, Liam. I just want to flag one thing — the budget. It's cold out here in Toronto, but the numbers look warm, eh?
+        Sarah (British): Excellent point, Emma. Not only does the budget matter, but also the quality of the deliverables. Let's make sure we don't rush.
+        Mike (American): I gotta say, I totally agree. Let's be smart about this. Quality first, speed second.
+        Liam (Australian): No worries, mate. We'll get it done properly.
+        Emma (Canadian): Perfect. Let's schedule a follow-up next week to review progress.
+      </div>
+      <div class="pt">
+        Sarah (britânica, RP): Bom dia a todos. Obrigada por participarem desta ligação global. Precisamos alinhar nossos objetivos antes do lançamento.
+        Mike (americano): Claro, Sarah. Eu quero garantir que todos concordemos com o cronograma. A equipe vai entregar o primeiro marco até sexta.
+        Liam (australiano): Olá, pessoal. Do meu lado, o escritório regional está pronto. Temos os recursos e estamos prontos para começar.
+        Emma (canadense): Ótimo ouvir isso, Liam. Só quero destacar uma coisa — o orçamento. Está frio aqui em Toronto, mas os números parecem aquecidos, né?
+        Sarah (britânica): Excelente ponto, Emma. Não só o orçamento importa, mas também a qualidade dos entregáveis. Vamos garantir que não vamos apressar.
+        Mike (americano): Preciso dizer, concordo totalmente. Vamos ser inteligentes. Qualidade primeiro, velocidade depois.
+        Liam (australiano): Sem preocupações, cara. Vamos fazer isso direito.
+        Emma (canadense): Perfeito. Vamos agendar um acompanhamento na próxima semana para revisar o progresso.
+      </div>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <h3>Listening Questions</h3>
+    <p><strong>1.</strong> What is Sarah's accent?</p>
+    <select id="l1">
+      <option value="">Choose</option><option>American</option><option>British (RP)</option><option>Australian</option>
+    </select>
+
+    <p><strong>2.</strong> What does Mike want to make sure of?</p>
+    <select id="l2">
+      <option value="">Choose</option><option>The budget</option><option>The timeline</option><option>The quality</option>
+    </select>
+
+    <p><strong>3.</strong> When will the first milestone be delivered?</p>
+    <select id="l3">
+      <option value="">Choose</option><option>By Monday</option><option>By Friday</option><option>Next month</option>
+    </select>
+
+    <p><strong>4.</strong> What is Liam's accent?</p>
+    <select id="l4">
+      <option value="">Choose</option><option>Canadian</option><option>Australian</option><option>British</option>
+    </select>
+
+    <p><strong>5.</strong> What expression does Liam use?</p>
+    <select id="l5">
+      <option value="">Choose</option><option>"Eh"</option><option>"G'day"</option><option>"Wanna"</option>
+    </select>
+
+    <p><strong>6.</strong> What does Emma want to flag?</p>
+    <select id="l6">
+      <option value="">Choose</option><option>The timeline</option><option>The budget</option><option>The resources</option>
+    </select>
+
+    <p><strong>7.</strong> What is Emma's accent?</p>
+    <select id="l7">
+      <option value="">Choose</option><option>American</option><option>Canadian</option><option>Australian</option>
+    </select>
+
+    <p><strong>8.</strong> What structure does Sarah use to emphasize two points?</p>
+    <select id="l8">
+      <option value="">Choose</option><option>"Not only... but also"</option><option>"However"</option><option>"Would you like me to"</option>
+    </select>
+
+    <p><strong>9.</strong> What does Mike say about priority?</p>
+    <select id="l9">
+      <option value="">Choose</option><option>Speed first</option><option>Quality first, speed second</option><option>Budget first</option>
+    </select>
+
+    <p><strong>10.</strong> What will they schedule for next week?</p>
+    <select id="l10">
+      <option value="">Choose</option><option>A launch</option><option>A follow-up</option><option>A training session</option>
+    </select>
+
+    <button class="secondary" onclick="checkListening()">Check Listening</button>
+    <div id="lfb" class="feedback"></div>
+  </div>
+</section>
+
+<section class="card speaking-card" id="speaking">
+  <h2>🗣️ 7. Speaking Practice — Shadowing & Stress Drills</h2>
+  <p>Agora é hora de praticar em voz alta. A técnica de <strong>shadowing</strong> (repetir imediatamente após o áudio) é uma das mais eficazes para melhorar pronúncia, ritmo e velocidade.</p>
+
+  <div class="example">
+    <strong>How to Shadow:</strong><br>
+    <span class="en">1) Play the audio. 2) Repeat immediately, imitating rhythm and intonation. 3) Focus on the stressed words. 4) Repeat 3 times. 5) Record yourself and compare.</span>
+  </div>
+
+  <h3>Shadowing Drills — Formal</h3>
+  <ol>
+    <li>I would like to PROPOSE a STRATEGIC PARTNERSHIP.</li>
+    <li>We APPRECIATE your CONTINUED SUPPORT and COMMITMENT to EXCELLENCE.</li>
+    <li>The COMPANY will IMPLEMENT the NEW POLICY next QUARTER.</li>
+  </ol>
+
+  <h3>Shadowing Drills — Informal</h3>
+  <ol>
+    <li>Hey, I REALLY think we should GRAB a COFFEE and TALK.</li>
+    <li>I'm TOTALLY EXHAUSTED — it's been a CRAZY week at WORK.</li>
+    <li>Lemme KNOW if you WANNA join us LATER.</li>
+  </ol>
+
+  <h3>Shadowing Drills — International</h3>
+  <ol>
+    <li>Our GLOBAL TEAM will DELIVER the PROJECT on TIME and WITHIN BUDGET.</li>
+    <li>We NEED to ALIGN our OBJECTIVES with the REGIONAL TEAMS.</li>
+    <li>The CONTRACT covers MULTIPLE REGIONS and REQUIRES COMPLIANCE with LOCAL LAWS.</li>
+  </ol>
+
+  <textarea id="speakingNotes" placeholder="Escreva suas respostas ou anotações de shadowing aqui..."></textarea>
+  <button onclick="saveSpeaking()">💾 Save My Practice</button>
+  <div id="speakFb" class="feedback"></div>
+</section>
+
+<section class="card" id="quiz">
+  <h2>🎮 8. Interactive Quiz</h2>
+  <p>10 questões. Escolha uma alternativa. O feedback aparece imediatamente. <em>As questões são embaralhadas a cada tentativa.</em></p>
+
+  <div id="quizContainer"></div>
+
+  <div class="score">
+    <div>YOUR SCORE</div>
+    <strong id="score">0 / 10</strong>
+    <p id="scoreMessage">Complete o quiz para ver seu resultado.</p>
+    <button class="light" onclick="restartQuiz()">🔄 Restart Quiz</button>
+  </div>
+</section>
+
+<section class="card">
+  <h2>🏁 Lesson Challenge</h2>
+  <p>Sem consultar o conteúdo, tente dizer em inglês com pronúncia clara e ritmo correto:</p>
+  <div class="example">
+    <strong>"Our GLOBAL TEAM will DELIVER the PROJECT on TIME. I REALLY think we should ALIGN our OBJECTIVES before the LAUNCH. It would be in our BEST INTEREST to reach a MUTUAL AGREEMENT. I'm gonna CALL you LATER to FOLLOW UP."</strong>
+  </div>
+  <p class="small">Objetivo: produzir uma apresentação de 30-45 segundos, mantendo word stress, sentence stress e ritmo correto, com velocidade moderada (120-140 wpm).</p>
+</section>
+
+</main>
+
+<footer>
+  Inglês Profissional • Preparação para Exames • Cambridge • IELTS • TOEFL • Duolingo English Test (DET)<br>
+  <span class="copyright">© English VClass • Edson D'Aguiar</span>
+  • WhatsApp ➡️ <a href="https://wa.me/5541991725009" target="_blank" rel="noopener">Contato</a>
+</footer>
+
+<script>
+/* ---------- AUDIO ---------- */
+document.addEventListener('click', function(e) {
+  const btn = e.target.closest('.audio-btn');
+  if (!btn) return;
+  e.stopPropagation();
+  const phrase = btn.dataset.phrase;
+  const accent = btn.dataset.accent || 'us';
+  if (!phrase) return;
+
+  if (window.speechSynthesis) window.speechSynthesis.cancel();
+
+  const utterance = new SpeechSynthesisUtterance(phrase);
+  const langMap = { us: 'en-US', uk: 'en-GB', au: 'en-AU', ca: 'en-CA' };
+  utterance.lang = langMap[accent] || 'en-US';
+  utterance.rate = 0.85;
+  utterance.pitch = 1.0;
+
+  const voices = window.speechSynthesis.getVoices();
+  if (voices.length > 0) {
+    const found = voices.find(v => v.lang.startsWith(utterance.lang)) ||
+                  voices.find(v => v.lang.startsWith('en'));
+    if (found) utterance.voice = found;
+  }
+
+  btn.classList.add('playing');
+  utterance.onend = () => btn.classList.remove('playing');
+  utterance.onerror = () => btn.classList.remove('playing');
+  window.speechSynthesis.speak(utterance);
+});
+
+/* ---------- FEEDBACK HELPER ---------- */
+function setFeedback(id, correct, text){
+  const el=document.getElementById(id);
+  el.className='feedback '+(correct?'correct':'wrong');
+  el.textContent=(correct?'🟢 ':'🔴 ')+text;
+}
+
+/* ---------- PROGRESS ---------- */
+const SECTIONS = ['objetivos','accents','stress','velocity','vocab','exercises','listening','speaking','quiz'];
+const sectionState = {};
+SECTIONS.forEach(s => sectionState[s] = false);
+
+function markSectionDone(id){
+  if (sectionState[id]) return;
+  sectionState[id] = true;
+  const link = document.querySelector('nav a[data-section="'+id+'"]');
+  if (link) link.classList.add('done');
+  updateProgress();
+}
+
+function updateProgress(){
+  const done = SECTIONS.filter(s => sectionState[s]).length;
+  const pct = Math.round((done / SECTIONS.length) * 100);
+  document.getElementById('globalProgress').style.width = pct + '%';
+  document.getElementById('progressLabel').textContent = pct;
+}
+
+document.querySelectorAll('#exercises .exercise button').forEach(btn => {
+  btn.addEventListener('click', () => markSectionDone('exercises'));
+});
+document.querySelectorAll('#listening button').forEach(btn => {
+  btn.addEventListener('click', () => markSectionDone('listening'));
+});
+document.querySelector('#speaking button')?.addEventListener('click', () => markSectionDone('speaking'));
+
+/* ---------- EXERCISES ---------- */
+function checkEx1(){
+  const v=document.getElementById('ex1').value;
+  setFeedback('ex1fb',v==='Non-Rhotic R','Correct! Non-rhoticity means the R is silent after vowels.');
+  if(v!=='Non-Rhotic R') document.getElementById('ex1fb').textContent='🔴 Try again. It is non-rhoticity.';
+  markSectionDone('exercises');
+}
+function checkEx2(){
+  const v=document.getElementById('ex2').value;
+  setFeedback('ex2fb',v==='Flap T','Correct! The flap T makes "water" sound like "wadder".');
+  if(v!=='Flap T') document.getElementById('ex2fb').textContent='🔴 Try again. It is the flap T.';
+  markSectionDone('exercises');
+}
+function checkEx3(){
+  const v=document.getElementById('ex3').value;
+  setFeedback('ex3fb',v==='Cockney','Correct! "Fink" for "think" is th-fronting, a Cockney feature.');
+  if(v!=='Cockney') document.getElementById('ex3fb').textContent='🔴 Try again. Cockney uses th-fronting.';
+  markSectionDone('exercises');
+}
+function checkEx4(){
+  const v=document.getElementById('ex4').value;
+  setFeedback('ex4fb',v==='First syllable (PHO-)','Correct! PHOtograph — stress on the first syllable.');
+  if(v!=='First syllable (PHO-)') document.getElementById('ex4fb').textContent='🔴 Try again. PHO-to-graph.';
+  markSectionDone('exercises');
+}
+function checkEx5(){
+  const v=document.getElementById('ex5').value.trim().toLowerCase().replace(/[.!?]+$/,'').replace(/\s+/g,' ');
+  const ok=v==='our global team will deliver the project';
+  setFeedback('ex5fb',ok,'Correct! Our global team will deliver the project.');
+  if(!ok) document.getElementById('ex5fb').textContent='🔴 Try again. Start with "Our global team...".';
+  markSectionDone('exercises');
+}
+function checkEx6(){
+  const v=document.getElementById('ex6').value.trim().toLowerCase().replace(/[.!?]+$/,'').replace(/\s+/g,' ');
+  const ok=v==="i'm totally exhausted it's been a crazy week at work" ||
+           v==="i am totally exhausted it's been a crazy week at work";
+  setFeedback('ex6fb',ok,'Correct! I\'m totally exhausted — it\'s been a crazy week at work.');
+  if(!ok) document.getElementById('ex6fb').textContent='🔴 Try again. Use "I\'m totally exhausted...".';
+  markSectionDone('exercises');
+}
+
+/* ---------- LISTENING ---------- */
+function speakListening(){
+  if(!('speechSynthesis' in window)){
+    alert('Seu navegador não oferece reprodução de voz neste momento.');
+    return;
+  }
+  const text="Sarah: Good morning, everyone. Thank you for joining this global call. We need to align our objectives before the launch. Mike: Sure, Sarah. I wanna make sure we all agree on the timeline. The team is gonna deliver the first milestone by Friday. Liam: G'day, everyone. From my side, the regional office is ready. We've got the resources, and we're good to go. Emma: That's great to hear, Liam. I just want to flag one thing, the budget. It's cold out here in Toronto, but the numbers look warm, eh? Sarah: Excellent point, Emma. Not only does the budget matter, but also the quality of the deliverables. Let's make sure we don't rush. Mike: I gotta say, I totally agree. Let's be smart about this. Quality first, speed second. Liam: No worries, mate. We'll get it done properly. Emma: Perfect. Let's schedule a follow-up next week to review progress.";
+  const u=new SpeechSynthesisUtterance(text);
+  u.lang='en-US'; u.rate=.88;
+  speechSynthesis.cancel(); speechSynthesis.speak(u);
+  markSectionDone('listening');
+}
+function toggleTranscript(){
+  const t=document.getElementById('transcript');
+  t.style.display=t.style.display==='block'?'none':'block';
+  markSectionDone('listening');
+}
+function checkListening(){
+  let score=0;
+  if(document.getElementById('l1').value==='British (RP)') score++;
+  if(document.getElementById('l2').value==='The timeline') score++;
+  if(document.getElementById('l3').value==='By Friday') score++;
+  if(document.getElementById('l4').value==='Australian') score++;
+  if(document.getElementById('l5').value==='"G\'day"') score++;
+  if(document.getElementById('l6').value==='The budget') score++;
+  if(document.getElementById('l7').value==='Canadian') score++;
+  if(document.getElementById('l8').value==='"Not only... but also"') score++;
+  if(document.getElementById('l9').value==='Quality first, speed second') score++;
+  if(document.getElementById('l10').value==='A follow-up') score++;
+  const ok=score===10;
+  const msg=ok?'Excellent! 10/10 correct.':'You got '+score+'/10. Review the transcript and try again.';
+  setFeedback('lfb',ok,msg);
+  markSectionDone('listening');
+}
+
+/* ---------- SPEAKING ---------- */
+function saveSpeaking(){
+  const box=document.getElementById('speakingNotes');
+  const fb=document.getElementById('speakFb');
+  if(box.value.trim().length<10){
+    setFeedback('speakFb',false,'Write a few sentences first, then practice speaking them aloud.');
+  }else{
+    setFeedback('speakFb',true,'Great! Now read your sentences aloud and try to speak without looking.');
+    localStorage.setItem('englishVclassPronunciationSpeaking',box.value);
+  }
+  markSectionDone('speaking');
+}
+
+/* ---------- QUIZ (RANDOMIZED) ---------- */
+const baseQuestions=[
+ {q:'"Car" pronounced as "cah" — Which British feature is this?',a:['Flap T','Non-Rhotic R','Long A','Crisp T'],c:1,e:'Non-rhoticity: R is silent after vowels.'},
+ {q:'"Water" pronounced as "wadder" — Which American feature is this?',a:['Rhotic R','Flap T','Open O','Uptalk'],c:1,e:'Flap T: T between vowels sounds like D.'},
+ {q:'"I fink it\'s a good idea." — Which British accent is this?',a:['RP','Estuary','Cockney','Scottish'],c:2,e:'Cockney uses th-fronting (think → fink).'},
+ {q:'"Howay, man!" — Which British accent is this?',a:['Cockney','Geordie','Scouse','Estuary'],c:1,e:'Geordie from Newcastle uses "Howay".'},
+ {q:'"Aye, it\'s braw!" — Which British accent is this?',a:['Cockney','RP','Scottish','Scouse'],c:2,e:'Scottish uses "aye" and "braw".'},
+ {q:'Which accent is rhotic (R is always pronounced)?',a:['RP','Cockney','American','Estuary'],c:2,e:'American English is rhotic.'},
+ {q:'In "PHOtograph", which syllable is stressed?',a:['First','Second','Third','None'],c:0,e:'PHO-to-graph — first syllable.'},
+ {q:'Which words are typically STRESSED in English sentences?',a:['Articles and prepositions','Content words (nouns, verbs, adjectives)','Auxiliaries','Pronouns'],c:1,e:'Content words carry sentence stress.'},
+ {q:'"Going to" → "gonna" is an example of...',a:['Reduction','Intonation','Word stress','Liaison'],c:0,e:'Reduction occurs at fast speech rates.'},
+ {q:'At what speed does a native speaker typically deliver a lecture?',a:['80–110 wpm','110–140 wpm','140–170 wpm','170–200 wpm'],c:1,e:'Lectures and formal talks: 110–140 wpm.'}
+];
+
+let questions = [];
+let quizScore=0;
+let answered=0;
+
+function shuffle(arr){
+  const a=[...arr];
+  for(let i=a.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+
+function buildQuestions(){
+  questions = shuffle(baseQuestions).map(q => {
+    const pairs = q.a.map((text, idx) => ({text, correct: idx === q.c}));
+    const shuffledPairs = shuffle(pairs);
+    const newOptions = shuffledPairs.map(p => p.text);
+    const newCorrect = shuffledPairs.findIndex(p => p.correct);
+    return { q: q.q, a: newOptions, c: newCorrect, e: q.e };
+  });
+}
+
+function renderQuiz(){
+  buildQuestions();
+  const c=document.getElementById('quizContainer');
+  c.innerHTML='';
+  questions.forEach((item,i)=>{
+    const box=document.createElement('div');
+    box.className='exercise';
+    box.innerHTML='<h3>Question '+(i+1)+'</h3><p><strong>'+item.q+'</strong></p>';
+    item.a.forEach((ans,j)=>{
+      const b=document.createElement('button');
+      b.className='option';
+      b.textContent=String.fromCharCode(65+j)+') '+ans;
+      b.onclick=()=>answerQuiz(i,j,box);
+      box.appendChild(b);
+    });
+    const f=document.createElement('div');
+    f.className='feedback';
+    f.id='qfb'+i;
+    box.appendChild(f);
+    c.appendChild(box);
+  });
+  updateScore();
+}
+
+function answerQuiz(i,j,box){
+  const buttons=box.querySelectorAll('.option');
+  if([...buttons].some(b=>b.disabled)) return;
+  buttons.forEach(b=>b.disabled=true);
+  const correct=j===questions[i].c;
+  buttons[j].classList.add(correct?'correct':'wrong');
+  if(!correct) buttons[questions[i].c].classList.add('correct');
+  if(correct) quizScore++;
+  answered++;
+  const fb=document.getElementById('qfb'+i);
+  fb.className='feedback '+(correct?'correct':'wrong');
+  fb.textContent=(correct?'🟢 Correct! ':'🔴 Not quite. ')+questions[i].e;
+  updateScore();
+  if(answered===10) markSectionDone('quiz');
+}
+
+function updateScore(){
+  document.getElementById('score').textContent=quizScore+' / 10';
+  const msg=document.getElementById('scoreMessage');
+  if(answered===0) msg.textContent='Complete o quiz para ver seu resultado.';
+  else if(answered<10) msg.textContent='Keep going! '+answered+' of 10 answered.';
+  else if(quizScore===10) msg.textContent='🏆 Excellent! Perfect score!';
+  else if(quizScore>=8) msg.textContent='👏 Great job! Review the questions you missed.';
+  else if(quizScore>=6) msg.textContent='👍 Good start! Review the lesson and try again.';
+  else msg.textContent='📚 Keep practicing. Review the lesson and restart the quiz.';
+}
+
+function restartQuiz(){
+  quizScore=0; answered=0; renderQuiz();
+  document.getElementById('quiz').scrollIntoView({behavior:'smooth'});
+}
+
+renderQuiz();
+
+/* ---------- INTERSECTION OBSERVER for first sections ---------- */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.id;
+      if (['objetivos','accents','stress','velocity','vocab'].includes(id)) markSectionDone(id);
+    }
+  });
+}, { threshold: 0.35 });
+['objetivos','accents','stress','velocity','vocab'].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) observer.observe(el);
+});
+
+const saved=localStorage.getItem('englishVclassPronunciationSpeaking');
+if(saved) document.getElementById('speakingNotes').value=saved;
+
+updateProgress();
+</script>
+
+</body>
+</html>
